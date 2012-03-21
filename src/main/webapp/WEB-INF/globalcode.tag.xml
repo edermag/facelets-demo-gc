@@ -1,0 +1,14 @@
+<?xml version="1.0"?>    
+<!DOCTYPE facelet-taglib PUBLIC "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN" "facelet-taglib_1_0.dtd">    
+<facelet-taglib>    
+  <namespace>http://www.globalcode.com.br/facelets</namespace>    
+  <tag>    
+    <tag-name>barraBotoes</tag-name>    
+    <source>barraBotoes.xhtml</source>    
+  </tag>
+  
+  <tag>    
+    <tag-name>inputMask</tag-name>    
+    <source>inputMask.xhtml</source>    
+  </tag>
+</facelet-taglib>

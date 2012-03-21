@@ -1,0 +1,42 @@
+<ui:composition template="cadastro.xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:g="http://www.globalcode.com.br/facelets">
+  <ui:define name="titulo">- Cadastro de Fornecedores</ui:define>
+  <ui:define name="principal">
+    <div class="page-header">
+	  <h2>Fornecedores <small>- CADASTRO</small></h2>
+	</div>
+    <h:form>
+      <h:inputHidden value="#{fornecedorMB.fornecedor.id}" id="idFornecedor" />
+      
+      <fieldset>
+        <div id="_nome">
+          <h:outputLabel value="Nome" for="iNome" />
+      	  <div class="input">
+      	    <h:inputText value="#{fornecedorMB.fornecedor.nome}" id="iNome" />
+      	  </div>
+        </div>
+        <br />
+        
+        <div id="_cnpj">
+          <h:outputLabel value="Cnpj" for="iCnpj" />
+      	  <div class="input">
+        	<h:inputText id="iCnpj" value="#{fornecedorMB.fornecedor.cnpj}" />
+      	  </div>
+        </div>
+      </fieldset>
+     
+      <div class="actions"> 
+         <h:commandButton action="#{fornecedorMB.doSalvar}" value="Salvar" styleClass="btn primary" rendered="#{fornecedorMB.fornecedor != null}"/>  
+	  	 <h:commandButton action="#{fornecedorMB.doCancelar}" value="Cancelar" immediate="true" rendered="#{fornecedorMB.fornecedor != null}"/>  
+	     <h:commandButton action="#{fornecedorMB.doExcluir}" value="Excluir" styleClass="btn danger" rendered="#{fornecedorMB.fornecedor != null}" />
+	     
+	     <h:outputText value="Fornecedor não foi carregado corretamente! Não é possível executar nenhuma ação" rendered="#{fornecedorMB.fornecedor == null}"/>
+	  </div>
+	  
+	  <h:messages showDetail="true" showSummary="true" />
+    </h:form>
+  </ui:define>
+</ui:composition>

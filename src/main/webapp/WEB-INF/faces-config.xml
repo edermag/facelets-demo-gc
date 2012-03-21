@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+  <application>
+  	<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+  </application>
+  
+  <managed-bean>
+  	<managed-bean-name>fornecedorMB</managed-bean-name>
+  	<managed-bean-class>br.com.yaw.faceletsdemo.mb.FornecedorMB</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  <managed-bean>
+  	<managed-bean-name>clienteMB</managed-bean-name>
+  	<managed-bean-class>br.com.yaw.faceletsdemo.mb.ClienteMB</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  <navigation-rule>
+  	<!-- Navegacao para cadastro de fornecedores -->
+  	<navigation-case>
+  		<from-outcome>listaFornecedores</from-outcome>
+  		<to-view-id>/listFornecedores.xhtml</to-view-id>
+  	</navigation-case>
+  	
+  	<navigation-case>
+  		<from-outcome>novoFornecedor</from-outcome>
+  		<to-view-id>/formFornecedores.xhtml</to-view-id>
+  	</navigation-case>
+  	
+  	<navigation-case>
+  		<from-outcome>edicaoFornecedor</from-outcome>
+  		<to-view-id>/formFornecedores.xhtml</to-view-id>
+  	</navigation-case>
+  	
+  	<!-- Navegacao para cadastro de clientes -->
+  	<navigation-case>
+  		<from-outcome>listaClientes</from-outcome>
+  		<to-view-id>/listClientes.xhtml</to-view-id>
+  	</navigation-case>
+  	
+  	<navigation-case>
+  		<from-outcome>novoCliente</from-outcome>
+  		<to-view-id>/formClientes.xhtml</to-view-id>
+  	</navigation-case>
+  	
+  	<navigation-case>
+  		<from-outcome>edicaoCliente</from-outcome>
+  		<to-view-id>/formClientes.xhtml</to-view-id>
+  	</navigation-case>
+  	
+  	<!-- index -->
+  	<navigation-case>
+  		<from-outcome>sobre</from-outcome>
+  		<to-view-id>/sobre.xhtml</to-view-id>
+  	</navigation-case>
+  </navigation-rule>
+
+</faces-config>

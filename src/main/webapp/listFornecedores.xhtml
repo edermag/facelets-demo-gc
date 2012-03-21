@@ -1,0 +1,45 @@
+<ui:composition template="cadastro.xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+  <ui:define name="titulo">- Listagem de Fornecedores</ui:define>
+  <ui:define name="principal">
+    <div class="page-header">
+	  <h2>Fornecedores <small>- LISTAGEM</small></h2>
+	</div>
+    <h:form>
+      <ui:decorate template="listagem.xhtml">
+        <ui:define name="filtros">
+          <div id="_nome">
+            <h:outputLabel value="Nome" for="iNome" />
+            <div class="input">
+              <h:inputText value="#{fornecedorMB.filtroNome}" id="iNome"/>
+            </div>
+          </div>
+          
+          <br />
+          <div>
+            <h:commandButton value="Pesquisar" action="#{fornecedorMB.doPesquisar}" styleClass="btn info"/>
+            <h:commandButton value="Adicionar" action="#{fornecedorMB.doNovo}" />
+          </div>
+        </ui:define>
+
+        <ui:define name="tabela">
+          <h:dataTable styleClass="zebra-striped" id="tableFornecedores" value="#{fornecedorMB.fornecedorDM}" var="f">
+            <h:column>
+              <f:facet name="header">Nome</f:facet>
+              <h:commandLink action="#{fornecedorMB.doEditar}">
+                <h:outputText value="#{f.nome}" />
+              </h:commandLink>
+            </h:column>
+            <h:column>  
+              <f:facet name="header">Cnpj</f:facet>
+              <h:outputText value="#{f.cnpj}" />
+            </h:column>
+          </h:dataTable>
+          
+        </ui:define>
+      </ui:decorate>
+    </h:form>
+  </ui:define>
+</ui:composition>

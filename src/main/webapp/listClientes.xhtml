@@ -1,0 +1,45 @@
+<ui:composition template="cadastro.xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+  <ui:define name="titulo">- Listagem de Clientes</ui:define>
+  <ui:define name="principal">
+    <div class="page-header">
+	  <h2>Clientes <small>- LISTAGEM</small></h2>
+	</div>
+    <h:form>
+      <ui:decorate template="listagem.xhtml">
+        <ui:define name="filtros">
+          <div id="_nome">
+            <h:outputLabel value="Nome" for="iNome" />
+            <div class="input">
+              <h:inputText value="#{clienteMB.filtroNome}" id="iNome"/>
+            </div>
+          </div>
+          
+          <br />
+          <div>
+            <h:commandButton value="Pesquisar" action="#{clienteMB.doPesquisar}" styleClass="btn info"/>
+            <h:commandButton value="Adicionar" action="#{clienteMB.doNovo}" />
+          </div>
+        </ui:define>
+
+        <ui:define name="tabela">
+          <h:dataTable styleClass="zebra-striped" id="tableClientes" value="#{clienteMB.clienteDM}" var="c">
+            <h:column>
+              <f:facet name="header">Nome</f:facet>
+              <h:commandLink action="#{clienteMB.doEditar}">
+                <h:outputText value="#{c.nome}" />
+              </h:commandLink>
+            </h:column>
+            <h:column>  
+              <f:facet name="header">Cpf</f:facet>
+              <h:outputText value="#{c.cpf}" />
+            </h:column>
+          </h:dataTable>
+          
+        </ui:define>
+      </ui:decorate>
+    </h:form>
+  </ui:define>
+</ui:composition>

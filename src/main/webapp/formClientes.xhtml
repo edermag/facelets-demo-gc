@@ -1,0 +1,42 @@
+<ui:composition template="cadastro.xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:g="http://www.globalcode.com.br/facelets">
+  <ui:define name="titulo">- Cadastro de Clientes</ui:define>
+  <ui:define name="principal">
+    <div class="page-header">
+	  <h2>Clientes <small>- CADASTRO</small></h2>
+	</div>
+    <h:form>
+      <h:inputHidden value="#{clienteMB.cliente.id}" id="idCliente" />
+      
+      <fieldset>
+        <div id="_nome">
+          <h:outputLabel value="Nome" for="iNome" />
+      	  <div class="input">
+      	    <h:inputText value="#{clienteMB.cliente.nome}" id="iNome" />
+      	  </div>
+        </div>
+        <br />
+        
+        <div id="_cpf">
+          <h:outputLabel value="Cpf" for="iCpf" />
+      	  <div class="input">
+        	<h:inputText id="iCpf" value="#{clienteMB.cliente.cpf}" />
+      	  </div>
+        </div>
+      </fieldset>
+     
+      <div class="actions"> 
+         <h:commandButton action="#{clienteMB.doSalvar}" value="Salvar" styleClass="btn primary" rendered="#{clienteMB.cliente != null}"/>  
+	  	 <h:commandButton action="#{clienteMB.doCancelar}" value="Cancelar" immediate="true" rendered="#{clienteMB.cliente != null}"/>  
+	     <h:commandButton action="#{clienteMB.doExcluir}" value="Excluir" styleClass="btn danger" rendered="#{clienteMB.cliente != null}" />
+	     
+	     <h:outputText value="Cliente não foi carregado corretamente! Não é possível executar nenhuma ação" rendered="#{clienteMB.cliente == null}"/>
+	  </div>
+	  
+	  <h:messages showDetail="true" showSummary="true" />
+    </h:form>
+  </ui:define>
+</ui:composition>

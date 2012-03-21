@@ -1,0 +1,12 @@
+<ui:component xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:ui="http://java.sun.com/jsf/facelets"  
+    xmlns:c="http://java.sun.com/jstl/core">  
+    
+  <div class="actions">  
+	  <h:commandButton action="#{mbean[acaoSalvar]}" value="Salvar" styleClass="btn primary" />  
+	  <h:commandButton action="#{mbean[acaoCancelar]}" value="Cancelar" immediate="true" />  
+	  <h:commandButton action="#{mbean[acaoExcluir]}" value="Excluir" styleClass="btn danger" render="#{renderizaExcluir}"/>  
+  </div>
+
+</ui:component>  

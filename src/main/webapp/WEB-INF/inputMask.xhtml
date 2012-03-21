@@ -1,0 +1,11 @@
+<ui:component xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:ui="http://java.sun.com/jsf/facelets">  
+  <script>  
+    jQuery(function($){  
+      $("input[id*='#{id}']").mask('#{mascara}');  
+    });  
+  </script>  
+  
+  <h:inputText id="#{id}" value="#{value}" styleClass="masked"/>  
+</ui:component>

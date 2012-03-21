@@ -1,0 +1,42 @@
+<ui:composition template="cadastro.xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:g="http://www.globalcode.com.br/facelets">
+  <ui:define name="titulo">- Sobre o Projeto</ui:define>
+  <ui:define name="principal">
+    <div class="page-header">
+	  <h1>Facelets + Bootstrap <small>- DEMONSTRAÇÃO</small></h1>
+	</div>
+	<div class="marketing">
+	  <p>
+        Esse projeto foi criado para demonstrar o desenvolvimento de templates utilizando as tecnologias <strong>Facelets</strong> e <strong>Bootstrap</strong>. 
+      </p>
+      <p>Nessa demonstração utilizo o <strong>JavaServer Faces (JSF) 1.2</strong>.</p>
+      <br/>
+      
+      <div class="row">
+        <div class="span5">
+          <h2>Facelets</h2>
+          <p><strong>Facelets</strong> é uma tecnologia desenvolvida para criação e renderização de interface gráfica em projetos que utilizam JavaServer Faces (JSF). Criada como uma alternativa mais aderente ao modelo de componentes imposto pelo JSF.</p>
+          <p><a class="btn" href="http://facelets.java.net/nonav/docs/dev/docbook.html">Veja os detalhes »</a></p>
+        </div>
+        <div class="span5">
+          <h2>Bootstrap</h2>
+          <p>É um toolkit para criação de front-end tirando proveito de técnicas recentes para elaboração de design gráfico. Desenvolvido pelo Twitter, o <strong>Bootstrap</strong> provê tipografia estilizada para diversos componentes HTML.</p>
+          <p><a class="btn" href="http://twitter.github.com/bootstrap/index.html">Veja os detalhes »</a></p>
+        </div>
+        <div class="span5">
+          <h2>Blog</h2>
+          <p>Fiz um post no <strong>Globalcoders</strong> descrevendo a proposta do Facelets. Lá utilizei alguns exemplos de código, que também foram a base para o desenvolvimento desse projeto demonstração.</p>
+          <p><a class="btn" href="http://blog.globalcode.com.br/2009/08/facelets-uma-forma-mais-agil-para.html">Veja os detalhes »</a></p>
+        </div>
+      </div>
+      
+      <hr/>
+      <h3>Tecnologias Open-source</h3>
+      <p>Todas as tecnologias utilizadas para o desenvolvimento desse projeto são <strong>Open-source</strong>.</p>
+      <p>O projeto é construído com o <a href="http://maven.apache.org/">Maven</a>. O <strong>pom.xml</strong> pode utilizado como exemplo para outros projetos que adotam essas e outras tecnologias.</p>
+    </div>
+  </ui:define>
+</ui:composition>
